@@ -19,7 +19,10 @@ var indexRoutes = require("./routes/index");
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect("mongodb+srv://harshit:khushi01@cluster0-zzupi.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://harshit:khushi01@cluster0-zzupi.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+});
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
