@@ -1,7 +1,7 @@
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
-	mongoose = require("mongoose"),
+	mongoose =require("mongoose"),
 	port = process.env.PORT || 3000,
 	flash = require("connect-flash"),
 	// seedDB = require("./seeds"),
