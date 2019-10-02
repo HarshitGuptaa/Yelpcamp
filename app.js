@@ -19,10 +19,12 @@ var indexRoutes = require("./routes/index");
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect("mongodb+srv://harshit:khushi01@cluster0-zzupi.mongodb.net/test?retryWrites=true&w=majority", {
-	useNewUrlParser: true,
-	useCreateIndex: true
-});
+
+mongoose.connect("process.env.DATABASEURL");
+// mongoose.connect("mongodb+srv://harshit:khushi01@cluster0-zzupi.mongodb.net/test?retryWrites=true&w=majority", {
+// 	useNewUrlParser: true,
+// 	useCreateIndex: true
+// });
 
 
 // import pymongo
