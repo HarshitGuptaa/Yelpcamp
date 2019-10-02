@@ -1,7 +1,7 @@
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
-	mongoose =require("mongoose"),
+	mongoose = require("mongoose"),
 	port = process.env.PORT || 3000,
 	flash = require("connect-flash"),
 	// seedDB = require("./seeds"),
@@ -23,6 +23,15 @@ mongoose.connect("mongodb+srv://harshit:khushi01@cluster0-zzupi.mongodb.net/test
 	useNewUrlParser: true,
 	useCreateIndex: true
 });
+
+
+// import pymongo
+// import dns # required for connecting with SRV
+
+// client = pymongo.MongoClient("mongodb+srv://kay:myRealPassword@cluster0.mongodb.net/test?w=majority")
+// db = client.test
+
+
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
