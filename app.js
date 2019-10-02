@@ -2,7 +2,7 @@ var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
 	mongoose = require("mongoose"),
-	port = 3000,
+	port = process.env.PORT || 3000,
 	flash = require("connect-flash"),
 	// seedDB = require("./seeds"),
 	Campground = require("./models/campground"),
@@ -53,6 +53,6 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
 	console.log("The Yelp Camp server has started!");
 });
